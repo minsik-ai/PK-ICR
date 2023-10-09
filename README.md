@@ -3,7 +3,8 @@ This repository contains training and evaluation code for our EMNLP 2023 paper [
 
 To be updated soon.
 
-Rough version: https://bit.ly/3IDOqHh
+## Rough draft
+https://bit.ly/3IDOqHh
 
 ## Cite as
 
