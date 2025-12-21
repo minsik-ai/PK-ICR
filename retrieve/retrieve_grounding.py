@@ -1,10 +1,3 @@
-# TODO : Make line by line
-# TODO : Add Persona??
-# TODO : persona_grounding via TFIDF or SentenceTransformer [true, false, false, false, false]
-# TODO : knowledge_candidate -> knowledge_candidates
-# TODO : knowledge_answer_index via TFIDF or SentenceTransformer
-# TODO : Remove triple or whatevers
-# TODO : GROUNDING VIEW - what does model use as grounding if present?
 import logging
 import random
 from argparse import ArgumentParser
