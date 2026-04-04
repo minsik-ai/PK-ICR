@@ -7,7 +7,7 @@ import torch
 from torch import nn
 from transformers import AutoTokenizer, BertForNextSentencePrediction, MobileBertForNextSentencePrediction
 
-from data_utils import choose_top_idx_tfidf
+from utils.data_utils import choose_top_idx_tfidf
 from tqdm import tqdm
 from sentence_transformers import SentenceTransformer, util, CrossEncoder
 import numpy as np
@@ -60,9 +60,9 @@ def choose_top_idx_sbert(knowledge, question, enc):
         pairs = [[question, cand] for cand in knowledge]
         q_sents = [p[0] for p in pairs]
         a_sents = [p[1] for p in pairs]
-        enc = bert_token(q_sents, a_sents, return_tensors="pt", padding=True, max_length=512, truncation=True).to("cuda")
+        encoding = bert_token(q_sents, a_sents, return_tensors="pt", padding=True, max_length=512, truncation=True).to("cuda")
         with torch.no_grad():
-            outs = bert_nsp(**enc)
+            outs = bert_nsp(**encoding)
             probs = torch.nn.Softmax(dim=1)(outs.logits)
         results = [(i, ps[1]) for i, ps in enumerate(probs)]
     else:

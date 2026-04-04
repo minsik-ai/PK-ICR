@@ -9,7 +9,7 @@ from sentence_transformers.evaluation import EmbeddingSimilarityEvaluator
 from torch import nn
 from torch.utils.data import DataLoader
 
-from data_utils import choose_top_idx_tfidf
+from utils.data_utils import choose_top_idx_tfidf
 from tqdm import tqdm
 from sentence_transformers import CrossEncoder, InputExample, SentenceTransformer, losses
 import json
