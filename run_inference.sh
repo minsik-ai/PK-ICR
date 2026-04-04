@@ -1,7 +1,6 @@
 #!/bin/sh
 
 python retrieve/retrieve_grounding.py \
-    --add_grounding \
     --input_path data/lines_test_public.json \
     --output_path data/lines_aug_test_sbert_persona_reselect_with_aug_finetune_0_5.json \
     --method sbert \
